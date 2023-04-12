@@ -12,7 +12,7 @@ WORKDIR /tmp
 ENV PATH /tmp/node_modules/.bin:$PATH
 
 # Copy needed files
-COPY ./package.json ./yarn.lock ./
+COPY ./package*.json ./
 
 # Install deps
 RUN npm install --production
