@@ -1,4 +1,4 @@
-FROM ghcr.io/hazmi35/node:18-dev-alpine as build-stage
+FROM ghcr.io/hazmi35/node:20-dev-alpine as build-stage
 
 # Installing libvips-dev for sharp Compatibility
 RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev
@@ -27,7 +27,7 @@ COPY ./ .
 RUN npm run build
 
 # Get ready for production
-FROM ghcr.io/hazmi35/node:18-dev-alpine
+FROM ghcr.io/hazmi35/node:20-dev-alpine
 
 # Set working directory
 WORKDIR /app
